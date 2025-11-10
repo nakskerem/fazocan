@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
   text-align: center;
   background: linear-gradient(135deg, #ffffff, #f8f9fa, #e9ecef);
   background-size: 400% 400%;
@@ -76,7 +76,7 @@ const candleColors=['#ff6b6b','#ff922b','#fadb14','#51cf66','#339af0'];
 const balloonColors=['#dee2e6','#f1f3f5','#e9ecef','#ffffff','#f8f9fa'];
 const candlePositions=Array.from({length:BALLOON_COUNT},(_,i)=>i*13+30);
 const balloons=[];
-// Create Candles and link with random balloon
+// Create Candles
 for(let i=0;i<BALLOON_COUNT;i++){
   const candle=document.createElement('div');
   candle.className='candle';
@@ -101,7 +101,7 @@ for(let i=0;i<BALLOON_COUNT;i++){
   balloons.push(balloon);
 }
 // Audio for pop
-const popAudio=new Audio('data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEA...'); // kısa pop sesi, base64 placeholder
+const popAudio=new Audio('data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEA...');
 // Confetti
 const canvas=document.getElementById('confetti');
 const ctx=canvas.getContext('2d');
@@ -109,24 +109,14 @@ let confettiPieces=[];
 function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
 window.addEventListener('resize',resizeCanvas);
 resizeCanvas();
-function launchConfetti(amount){
-  for(let i=0;i<amount;i++){
-    confettiPieces.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height-200,r:Math.random()*6+2,c:balloonColors[Math.floor(Math.random()*balloonColors.length)],vy:Math.random()*4+2,vx:(Math.random()-0.5)*2});
-  }
-  requestAnimationFrame(drawConfetti);
-}
-function drawConfetti(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  confettiPieces.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,2*Math.PI);ctx.fillStyle=p.c;ctx.fill();p.y+=p.vy;p.x+=p.vx;if(p.y>canvas.height)p.y=-10;});
-  requestAnimationFrame(drawConfetti);
-}
+function launchConfetti(amount){for(let i=0;i<amount;i++){confettiPieces.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height-200,r:Math.random()*6+2,c:balloonColors[Math.floor(Math.random()*balloonColors.length)],vy:Math.random()*4+2,vx:(Math.random()-0.5)*2});}requestAnimationFrame(drawConfetti);}
+function drawConfetti(){ctx.clearRect(0,0,canvas.width,canvas.height);confettiPieces.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,2*Math.PI);ctx.fillStyle=p.c;ctx.fill();p.y+=p.vy;p.x+=p.vx;if(p.y>canvas.height)p.y=-10;});requestAnimationFrame(drawConfetti);}
 // Candle click and linked balloon
 const candles=document.querySelectorAll('.candle');
 candles.forEach((candle,i)=>{
   candle.addEventListener('click',()=>{
     if(candle.classList.contains('off')) return;
     candle.classList.add('off');
-    // linked balloon patlat
     const balloon=balloons[i];
     balloon.style.transform='scale(0)';
     balloon.style.opacity='0';
@@ -135,28 +125,12 @@ candles.forEach((candle,i)=>{
     if(Array.from(candles).every(c=>c.classList.contains('off'))){
       launchConfetti(150);
       document.getElementById('title').style.textShadow='0 0 40px #343a40,0 0 60px #495057,0 0 80px #6c757d';
-      if(Notification.permission==='granted'){
-        new Notification('1 sürprizim daha var');
-      } else if(Notification.permission!=='denied'){
-        Notification.requestPermission().then(p=>{if(p==='granted') new Notification('1 sürprizim daha var');});
-      }
+      if(Notification.permission==='granted'){new Notification('1 sürprizim daha var');} else if(Notification.permission!=='denied'){Notification.requestPermission().then(p=>{if(p==='granted') new Notification('1 sürprizim daha var');});}
     }
   });
 });
 // Animate balloons randomly
-function animateBalloons(){
-  balloons.forEach(b=>{
-    let top=parseFloat(b.style.top);
-    let left=parseFloat(b.style.left);
-    top-=Math.random()*0.2;
-    left+=Math.random()*0.2-0.1;
-    if(top<0) top=100;
-    if(left<0) left=0; if(left>90) left=90;
-    b.style.top=top+'%';
-    b.style.left=left+'%';
-  });
-  requestAnimationFrame(animateBalloons);
-}
+function animateBalloons(){balloons.forEach(b=>{let top=parseFloat(b.style.top);let left=parseFloat(b.style.left);top-=Math.random()*0.2;left+=Math.random()*0.2-0.1;if(top<0) top=100;if(left<0) left=0;if(left>90) left=90;b.style.top=top+'%';b.style.left=left+'%';});requestAnimationFrame(animateBalloons);}
 animateBalloons();
 // Music
 const AudioCtx=window.AudioContext||window.webkitAudioContext;
