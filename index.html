@@ -3,266 +3,229 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>İyi ki doğdun Fazocan 🎉</title>
+  <title>İyi ki Doğdun Fazocan 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg1: #ffefef;
-      --bg2: #fff7ff;
-      --accent: #ff6b6b;
-      --card-bg: rgba(255,255,255,0.9);
-      --glass: rgba(255,255,255,0.6);
-      --shadow: 0 8px 24px rgba(20,20,60,0.12);
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffb3c6, #ff8fab, #ffc8dd);
+      overflow-x: hidden;
+      color: #3a0ca3;
+      text-align: center;
     }
-    html,body{height:100%;margin:0;font-family: 'Helvetica Neue', Arial, sans-serif;background: linear-gradient(135deg,var(--bg1),var(--bg2));-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-
-    .container{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:48px 24px 80px;gap:18px}
-
-    header{display:flex;flex-direction:column;align-items:center;gap:6px}
-    h1{font-size:40px;margin:0;letter-spacing:1px;text-align:center}
-    .sparkle{display:inline-block;position:relative}
-    .sparkle::after{content:'✨';position:absolute;right:-36px;top:-6px;animation:twinkle 1.6s infinite}
-    @keyframes twinkle{0%{opacity:0;transform:scale(.6) rotate(-10deg)}50%{opacity:1;transform:scale(1.05) rotate(10deg)}100%{opacity:0;transform:scale(.6) rotate(-10deg)}}
-
-    .card{background:var(--card-bg);backdrop-filter: blur(6px);padding:22px;border-radius:16px;box-shadow:var(--shadow);max-width:980px;width:100%;}
-
-    .message{font-size:18px;line-height:1.5;color:#222;margin-bottom:18px;white-space:pre-wrap}
-
-    /* balloons area */
-    .sky{position:relative;height:360px;overflow:hidden;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05));}
-    .balloon{position:absolute;bottom:-120px;width:88px;height:118px;border-radius:50% 50% 50% 50%;display:flex;align-items:flex-end;justify-content:center;transform-origin:center bottom}
-    .balloon .string{width:2px;height:60px;background:rgba(80,80,80,0.25);margin-bottom:-44px;border-radius:2px}
-    .balloon::before{content:'';position:absolute;top:18px;left:6px;width:76px;height:76px;border-radius:50%;filter:blur(0.5px);opacity:.98}
-    .balloon .shine{position:absolute;left:14px;top:22px;width:24px;height:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.1));opacity:.85}
-
-    @keyframes floatup{0%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-14px) rotate(3deg)}100%{transform:translateY(-380px) rotate(-3deg)}}
-
-    /* cake & candles */
-    .cake-area{display:flex;flex-direction:column;align-items:center;padding-top:18px}
-    .cake{position:relative;width:640px;max-width:92%;height:160px;background:linear-gradient(180deg,#fff,#ffe9f0);border-radius:18px;padding-top:26px;box-shadow:0 10px 30px rgba(0,0,0,0.08);display:flex;align-items:flex-start;justify-content:center}
-    .cake .layer{width:84%;height:90px;background:linear-gradient(180deg,#ffdede,#ffc0d0);border-radius:12px}
-    .candles{position:absolute;top:-8px;left:50%;transform:translateX(-50%);display:flex;gap:8px;flex-wrap:nowrap}
-    .candle{width:12px;height:46px;background:linear-gradient(180deg,#fff,#ffe6e6);border-radius:3px;display:flex;align-items:flex-start;justify-content:center;position:relative;cursor:pointer}
-    .candle.off{opacity:.38;filter:grayscale(.6);transform:translateY(8px)}
-    .flame{width:12px;height:18px;border-radius:50%;position:absolute;top:-16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center}
-    .flame .inner{width:8px;height:12px;border-radius:50%;box-shadow:0 4px 8px rgba(255,120,80,0.14);filter:blur(.2px)}
-    .flame.yellow .inner{background: radial-gradient(circle at 40% 25%, #fff9b3 0%, #fff180 25%, #ffd36b 50%, #ff8a3d 100%)}
-    .flame.red .inner{background: radial-gradient(circle at 40% 25%, #fff0d6 0%, #ffd5b2 25%, #ff9a6f 50%, #ff6242 100%)}
-
-    .controls{display:flex;gap:12px;align-items:center;margin-top:12px}
-    .btn{background:linear-gradient(180deg,#fff,#f0f0f8);padding:8px 14px;border-radius:999px;border:0;box-shadow:0 6px 18px rgba(10,10,40,0.06);cursor:pointer}
-
-    .small{font-size:13px;color:#444}
-
-    .confetti-canvas{position:fixed;left:0;top:0;pointer-events:none;width:100%;height:100%;z-index:999}
-
-    footer{margin-top:12px;font-size:13px;color:#333;opacity:.9}
-
-    /* responsive tweaks */
-    @media (max-width:640px){h1{font-size:28px}.sky{height:260px}}
+    h1 {
+      font-size: 3em;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 0 20px rgba(255, 193, 203, 0.9), 0 0 40px #ff6b6b;
+      margin-top: 50px;
+      animation: glow 3s ease-in-out infinite;
+    }
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 20px #ffb3c6, 0 0 40px #ff8fab; }
+      50% { text-shadow: 0 0 30px #ffafcc, 0 0 60px #ffc8dd; }
+    }
+    .message {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 20px auto 50px;
+      background: rgba(255,255,255,0.3);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+      color: #4a148c;
+      backdrop-filter: blur(5px);
+    }
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 80px;
+      height: 100px;
+      border-radius: 50%;
+      animation: float 12s ease-in-out infinite;
+      opacity: 0.9;
+    }
+    .string {
+      position: absolute;
+      width: 2px;
+      height: 60px;
+      background: #555;
+      left: 50%;
+      top: 100%;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-300px) rotate(3deg); }
+      100% { transform: translateY(0) rotate(-3deg); }
+    }
+    .cake {
+      position: relative;
+      width: 300px;
+      height: 150px;
+      margin: 60px auto;
+      background: #ffe5ec;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+    .candle {
+      width: 15px;
+      height: 60px;
+      background: linear-gradient(to bottom, #fff, #f9a8d4);
+      border-radius: 5px;
+      display: inline-block;
+      margin: 0 4px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .candle:hover { transform: translateY(-5px); }
+    .flame {
+      width: 10px;
+      height: 20px;
+      background: radial-gradient(circle at 50% 20%, #fff 0%, #ffd166 40%, #ff6b6b 80%);
+      border-radius: 50%;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flicker 1s infinite;
+    }
+    @keyframes flicker {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+      50% { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
+    }
+    .candle.off .flame {
+      display: none;
+    }
+    .candle.off::after {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 20px;
+      background: radial-gradient(circle, rgba(150,150,150,0.6) 0%, transparent 70%);
+      animation: smoke 1s ease-out;
+    }
+    @keyframes smoke {
+      0% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateX(-50%) translateY(-20px) scale(1.2); }
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1><span class="sparkle">🎉 İyi ki doğdun Fazocan 🎉</span></h1>
-      <div class="small">Bu sayfa sana özel hazırlandı — mumları söndür, dileğini tut!</div>
-    </header>
-
-    <div class="card">
-      <div class="message" id="message">Doğum günüm kutlu dostluğumuz baki olsun. Hep olman hepte iyi ki olman dileğiyle… Bu balonlar ve mumlar yaşına özel 19 tane dileğini tut ve mumları söndür.</div>
-
-      <div class="sky" id="sky" aria-hidden="false"></div>
-
-      <div class="cake-area">
-        <div class="cake" role="img" aria-label="Doğum günü pastası">
-          <div class="layer"></div>
-          <div class="candles" id="candles"></div>
-        </div>
-        <div class="controls">
-          <button class="btn" id="playBtn">Müziği Çal / Duraklat</button>
-          <button class="btn" id="resetBtn">Mumları Yeniden Yak</button>
-          <div class="small">19 mum — hepsini söndür!</div>
-        </div>
-      </div>
-
-    </div>
-    <footer>💛 Dostluğumuz baki olsun. — Hazırlandı: Fazocan için</footer>
+  <h1>🎉 İyi ki Doğdun Fazocan 🎉</h1>
+  <div class="message">
+    Doğum günün kutlu dostluğumuz baki olsun. Hep olman hepte iyi ki olman dileğiyle… Bu balonlar ve mumlar yaşına özel 19 tane dileğini tut ve mumları söndür.
   </div>
 
-  <canvas class="confetti-canvas" id="confetti"></canvas>
+  <div class="cake" id="cake"></div>
+  <canvas id="confetti"></canvas>
 
   <script>
-    // --- Generate 19 balloons ---
-    const sky = document.getElementById('sky');
-    const BALLOON_COUNT = 19;
-    const colors = ['#FF6B6B','#FFD93D','#6BCB77','#4D96FF','#9B59B6','#FF7AB6','#FFB199','#7ED1B8'];
-
-    function rand(min,max){return Math.random()*(max-min)+min}
-
-    for(let i=0;i<BALLOON_COUNT;i++){
-      const b = document.createElement('div');
-      b.className='balloon';
-      const w = rand(64,100);
-      b.style.width = w + 'px';
-      b.style.height = Math.round(w*1.25)+'px';
-      const left = (i/(BALLOON_COUNT))*90 + rand(-6,6);
-      b.style.left = left + '%';
-      b.style.bottom = rand(-140,-60)+'px';
-      const color = colors[Math.floor(Math.random()*colors.length)];
-      b.style.background = color;
-      b.style.animation = `floatup ${rand(12,22)}s linear ${rand(-2,4)}s infinite`;
-      b.style.transform = `translateY(0)`;
-      // shine + string
-      const shine = document.createElement('div'); shine.className='shine'; b.appendChild(shine);
-      const str = document.createElement('div'); str.className='string'; b.appendChild(str);
-      sky.appendChild(b);
-    }
-
-    // --- Create 19 candles ---
-    const candlesWrap = document.getElementById('candles');
-    let extinguished = 0;
-    for(let i=0;i<BALLOON_COUNT;i++){
-      const c = document.createElement('div');
-      c.className='candle';
-      // alternate flame styles for variety
-      const flame = document.createElement('div'); flame.className='flame ' + (i%2?'yellow':'red');
-      const inner = document.createElement('div'); inner.className='inner';
-      flame.appendChild(inner);
-      c.appendChild(flame);
-
-      c.dataset.index = i;
-      c.addEventListener('click', ()=>{
-        if(c.classList.contains('off')) return;
-        c.classList.add('off');
-        extinguished++;
-        // small plop sound via WebAudio
-        playPlop();
-        if(extinguished >= BALLOON_COUNT){
-          celebrate();
+    const cake = document.getElementById('cake');
+    for (let i = 0; i < 19; i++) {
+      const candle = document.createElement('div');
+      candle.className = 'candle';
+      const flame = document.createElement('div');
+      flame.className = 'flame';
+      candle.appendChild(flame);
+      candle.addEventListener('click', () => {
+        candle.classList.add('off');
+        if (document.querySelectorAll('.candle:not(.off)').length === 0) {
+          startConfetti();
         }
       });
-      candlesWrap.appendChild(c);
+      cake.appendChild(candle);
     }
 
-    // Reset button
-    document.getElementById('resetBtn').addEventListener('click', ()=>{
-      extinguished=0;
-      document.querySelectorAll('.candle').forEach(c=>c.classList.remove('off'));
-      stopConfetti();
-    });
+    // Balloons
+    const colors = ['#ff8fab', '#ffb3c6', '#ffc8dd', '#ffafcc', '#ffe5ec'];
+    for (let i = 0; i < 19; i++) {
+      const balloon = document.createElement('div');
+      balloon.className = 'balloon';
+      balloon.style.left = Math.random() * 90 + '%';
+      balloon.style.background = colors[i % colors.length];
+      balloon.style.animationDelay = Math.random() * 5 + 's';
+      const string = document.createElement('div');
+      string.className = 'string';
+      balloon.appendChild(string);
+      document.body.appendChild(balloon);
+    }
 
-    // --- Simple confetti when all candles out ---
-    const confCanvas = document.getElementById('confetti');
-    const ctx = confCanvas.getContext('2d');
+    // Confetti Effect
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
     let confettiPieces = [];
-    function resizeCanvas(){confCanvas.width = innerWidth; confCanvas.height = innerHeight}
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    function celebrate(){
-      // sparkle text
-      const old = document.querySelector('h1');
-      old.classList.add('celebrated');
-      fireConfetti();
-      playCheer();
+    function startConfetti() {
+      for (let i = 0; i < 150; i++) {
+        confettiPieces.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height - canvas.height,
+          r: Math.random() * 6 + 2,
+          c: colors[Math.floor(Math.random() * colors.length)],
+          vy: Math.random() * 4 + 2,
+          vx: (Math.random() - 0.5) * 2
+        });
+      }
+      requestAnimationFrame(drawConfetti);
     }
 
-    function fireConfetti(){
-      confettiPieces = [];
-      const colors = ['#FF6B6B','#FFD93D','#6BCB77','#4D96FF','#9B59B6','#FF7AB6'];
-      for(let i=0;i<120;i++){
-        confettiPieces.push({x:innerWidth/2 + rand(-200,200), y: rand(-20,50), vx:rand(-2,2), vy:rand(1,6), r:rand(4,10), c:colors[Math.floor(Math.random()*colors.length)], rot:rand(0,360) });
-      }
-      runConfetti();
-      setTimeout(()=>{stopConfetti()},7000);
+    function drawConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confettiPieces.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.c;
+        ctx.fill();
+        p.y += p.vy;
+        p.x += p.vx;
+        if (p.y > canvas.height) p.y = -10;
+      });
+      requestAnimationFrame(drawConfetti);
     }
-    let confettiAnim = null;
-    function runConfetti(){
-      if(confettiAnim) cancelAnimationFrame(confettiAnim);
-      function frame(){
-        ctx.clearRect(0,0,confCanvas.width, confCanvas.height);
-        for(let p of confettiPieces){
-          p.x += p.vx; p.y += p.vy; p.vy += 0.08; p.rot += 6;
-          ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot*Math.PI/180);
-          ctx.fillStyle = p.c; ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*1.6);
-          ctx.restore();
-        }
-        confettiAnim = requestAnimationFrame(frame);
-      }
-      frame();
-    }
-    function stopConfetti(){ if(confettiAnim) cancelAnimationFrame(confettiAnim); ctx.clearRect(0,0,confCanvas.width,confCanvas.height); }
 
-    // --- WebAudio: plop sound and cheer ---
+    // Happy Birthday melody (same as before)
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
-    let audioCtx = null;
-    function ensureAudio(){ if(!audioCtx) audioCtx = new AudioCtx(); }
-    function playPlop(){ try{ ensureAudio(); const o = audioCtx.createOscillator(); const g = audioCtx.createGain(); o.type='sine'; o.frequency.value=320; g.gain.value=0.08; o.connect(g); g.connect(audioCtx.destination); o.start(); o.frequency.exponentialRampToValueAtTime(180, audioCtx.currentTime+0.12); g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime+0.18); setTimeout(()=>o.stop(),220);}catch(e){/*ignore*/} }
-    function playCheer(){ try{ ensureAudio(); const o = audioCtx.createOscillator(); const g = audioCtx.createGain(); o.type='triangle'; o.frequency.value=440; g.gain.value=0.02; o.connect(g); g.connect(audioCtx.destination); o.start(); o.frequency.exponentialRampToValueAtTime(220, audioCtx.currentTime+0.45); g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime+0.9); setTimeout(()=>o.stop(),1000);}catch(e){} }
+    let audioCtx = new AudioCtx();
+    const notes = { C4:261.63, D4:293.66, E4:329.63, F4:349.23, G4:392.00, A4:440.00, B4:493.88, C5:523.25, D5:587.33, E5:659.25, F5:698.46, G5:783.99 };
+    const melody = [ ['G4',0.45], ['G4',0.45], ['A4',0.9], ['G4',0.9], ['C5',0.9], ['B4',1.3], ['G4',0.45], ['G4',0.45], ['A4',0.9], ['G4',0.9], ['D5',0.9], ['C5',1.3], ['G4',0.45], ['G4',0.45], ['G5',0.9], ['E5',0.9], ['C5',0.9], ['B4',0.9], ['A4',1.3], ['F5',0.45], ['F5',0.45], ['E5',0.9], ['C5',0.9], ['D5',0.9], ['C5',1.3] ];
 
-    // --- Happy Birthday melody (synth) ---
-    const melody = [
-      // pairs: [note frequency, duration in seconds]
-      ['G4',0.45], ['G4',0.45], ['A4',0.9], ['G4',0.9], ['C5',0.9], ['B4',1.3],
-      ['G4',0.45], ['G4',0.45], ['A4',0.9], ['G4',0.9], ['D5',0.9], ['C5',1.3],
-      ['G4',0.45], ['G4',0.45], ['G5',0.9], ['E5',0.9], ['C5',0.9], ['B4',0.9], ['A4',1.3],
-      ['F5',0.45], ['F5',0.45], ['E5',0.9], ['C5',0.9], ['D5',0.9], ['C5',1.3]
-    ];
-    const notes = { C4:261.63, D4:293.66, E4:329.63, F4:349.23, G4:392.00, A4:440.00, B4:493.88,
-                    C5:523.25, D5:587.33, E5:659.25, F5:698.46, G5:783.99 };
-
-    let musicPlaying = false;
-    let musicTimer = null;
     function playMelody(){
-      try{
-        ensureAudio();
-        const now = audioCtx.currentTime + 0.02;
-        let t = now;
-        for(const [n,d] of melody){
-          const f = notes[n];
-          const o = audioCtx.createOscillator(); o.type='sine'; o.frequency.value = f;
-          const g = audioCtx.createGain(); g.gain.value = 0.0001;
-          o.connect(g); g.connect(audioCtx.destination);
-          o.start(t); g.gain.linearRampToValueAtTime(0.06,t+0.02); g.gain.linearRampToValueAtTime(0.001,t+d-0.05);
-          o.stop(t+d);
-          t += d;
-        }
-        musicPlaying = true;
-        // schedule turning off flag
-        if(musicTimer) clearTimeout(musicTimer);
-        musicTimer = setTimeout(()=>{musicPlaying=false;}, (t-now)*1000 + 200);
-      }catch(e){console.warn('audio blocked',e);} }
+      const now = audioCtx.currentTime + 0.02;
+      let t = now;
+      for(const [n,d] of melody){
+        const f = notes[n];
+        const o = audioCtx.createOscillator(); o.type='sine'; o.frequency.value = f;
+        const g = audioCtx.createGain(); g.gain.value = 0.0001;
+        o.connect(g); g.connect(audioCtx.destination);
+        o.start(t); g.gain.linearRampToValueAtTime(0.06,t+0.02); g.gain.linearRampToValueAtTime(0.001,t+d-0.05);
+        o.stop(t+d);
+        t += d;
+      }
+    }
 
-    // Play/pause button
-    const playBtn = document.getElementById('playBtn');
-    playBtn.addEventListener('click', async ()=>{
-      try{ ensureAudio(); if(audioCtx.state === 'suspended') await audioCtx.resume(); playMelody(); }catch(e){console.warn(e)}
+    window.addEventListener('load', () => {
+      try { audioCtx.resume().then(()=>playMelody()).catch(()=>{}); } catch(e){}
     });
-
-    // Try autoplay the melody once on first user gesture or load (browsers may block without gesture)
-    window.addEventListener('load', ()=>{
-      // try to start softly; if blocked, user can press the button
-      try{ ensureAudio(); if(audioCtx.state === 'suspended') audioCtx.resume().then(()=>playMelody()).catch(()=>{}); else playMelody(); }catch(e){}
-    });
-
-    // --- Accessibility: keyboard to extinguish candles with numbers 1-9 / letters ---
-    window.addEventListener('keydown', (e)=>{
-      // allow pressing 1..9, then q.. to map to up to 19
-      const key = e.key.toLowerCase();
-      const mapping = '123456789qwertyuiopasdfghj'; // first 19 chars
-      const idx = mapping.indexOf(key);
-      if(idx >=0 && idx < BALLOON_COUNT){ const c = document.querySelector(`.candle[data-index='${idx}']`); if(c && !c.classList.contains('off')) c.click(); }
-    });
-
-    // --- small hint: clicking balloons pops them visually (optional) ---
-    sky.addEventListener('click', (ev)=>{
-      const el = ev.target.closest('.balloon');
-      if(!el) return;
-      // pop animation
-      el.style.transition = 'transform .28s ease, opacity .28s linear';
-      el.style.transform += ' scale(.1)'; el.style.opacity = '0'; setTimeout(()=>el.remove(),320);
-    });
-
   </script>
 </body>
 </html>
